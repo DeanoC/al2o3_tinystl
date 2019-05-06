@@ -27,10 +27,10 @@
 #ifndef TINYSTL_VECTOR_H
 #define TINYSTL_VECTOR_H
 
-#include "allocator.h"
-#include "buffer.h"
-#include "new.h"
-#include "stddef.h"
+#include "allocator.hpp"
+#include "buffer.hpp"
+#include "new.hpp"
+#include "stddef.hpp"
 
 namespace tinystl {
 template<typename T, typename Alloc = TINYSTL_ALLOCATOR>

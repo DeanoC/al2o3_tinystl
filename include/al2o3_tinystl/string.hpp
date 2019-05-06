@@ -28,9 +28,9 @@
 #ifndef TINYSTL_STRING_H
 #define TINYSTL_STRING_H
 
-#include "allocator.h"
-#include "stddef.h"
-#include "hash.h"
+#include "allocator.hpp"
+#include "stddef.hpp"
+#include "hash.hpp"
 #include <tinystl/string_view.h>
 #include <cctype>
 #include <cstring>

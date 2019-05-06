@@ -27,10 +27,10 @@
 #ifndef TINYSTL_UNORDERED_MAP_H
 #define TINYSTL_UNORDERED_MAP_H
 
-#include "allocator.h"
-#include "buffer.h"
-#include "hash.h"
-#include "hash_base.h"
+#include "allocator.hpp"
+#include "buffer.hpp"
+#include "hash.hpp"
+#include "hash_base.hpp"
 
 namespace tinystl {
 

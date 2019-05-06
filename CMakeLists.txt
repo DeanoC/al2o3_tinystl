@@ -12,18 +12,18 @@ if(NOT al2o3_POPULATED)
 endif()
 
 set(Interface
-		allocator.h
-		buffer.h
-		hash.h
-		hash_base.h
-		new.h
-		stddef.h
-		string.h
-		string_view.h
-		traits.h
-		unordered_map.h
-		unordered_set.h
-		vector.h
+		allocator.hpp
+		buffer.hpp
+		hash.hpp
+		hash_base.hpp
+		new.hpp
+		stddef.hpp
+		string.hpp
+		string_view.hpp
+		traits.hpp
+		unordered_map.hpp
+		unordered_set.hpp
+		vector.hpp
 		)
 set(Src
 		)

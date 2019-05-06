@@ -4,7 +4,7 @@
 #ifndef TINYSTL_STRING_VIEW_H
 #define TINYSTL_STRING_VIEW_H
 
-#include "stddef.h"
+#include "stddef.hpp"
 
 namespace tinystl {
 
