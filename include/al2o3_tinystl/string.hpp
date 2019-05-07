@@ -36,6 +36,7 @@
 #include <cstring>
 #include <cstdarg>
 #include <cstdio>
+#include "inttypes.h"
 
 namespace tinystl {
 
