@@ -27,7 +27,7 @@
 #ifndef TINYSTL_TRAITS_H
 #define TINYSTL_TRAITS_H
 
-#include "new.hpp"
+#include "al2o3_tinystl/new.hpp"
 
 #if defined(__GNUC__)
 #	define TINYSTL_TRY_POD_OPTIMIZATION(t) __is_pod(t)

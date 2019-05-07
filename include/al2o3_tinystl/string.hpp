@@ -28,15 +28,14 @@
 #ifndef TINYSTL_STRING_H
 #define TINYSTL_STRING_H
 
-#include "allocator.hpp"
-#include "stddef.hpp"
-#include "hash.hpp"
-#include <tinystl/string_view.h>
+#include "al2o3_tinystl/allocator.hpp"
+#include "al2o3_tinystl/stddef.hpp"
+#include "al2o3_tinystl/hash.hpp"
+#include "al2o3_tinystl/string_view.hpp"
 #include <cctype>
 #include <cstring>
 #include <cstdarg>
 #include <cstdio>
-#include "inttypes.h"
 
 namespace tinystl {
 

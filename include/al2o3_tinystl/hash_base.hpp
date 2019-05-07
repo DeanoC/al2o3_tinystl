@@ -27,8 +27,8 @@
 #ifndef TINYSTL_HASH_BASE_H
 #define TINYSTL_HASH_BASE_H
 
-#include "tinystl/stddef.h"
-#include "tinystl/traits.h"
+#include "al2o3_tinystl/stddef.hpp"
+#include "al2o3_tinystl/traits.hpp"
 
 namespace tinystl {
 
