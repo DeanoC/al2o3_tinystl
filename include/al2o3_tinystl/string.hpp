@@ -721,7 +721,7 @@ static inline size_t hash(const basic_string<allocator>& value) {
 
 typedef basic_string<TINYSTL_ALLOCATOR> string;
 
-#if PLATFORM == PLATFORM_WINDOWS
+#if AL2O3_PLATFORM == AL2O3_PLATFORM_WINDOWS
 // basic to_string support, probably slow etc.
 #define TO_STRING_GEN(TYPE, FMT) \
 static inline string to_string(TYPE const t) { \
@@ -749,7 +749,7 @@ TO_STRING_GEN(int32_t, "%" PRIi32)
 TO_STRING_GEN(int64_t, "%" PRIi64)
 TO_STRING_GEN(float, "%f")
 TO_STRING_GEN(double, "%f")
-#if PLATFORM != PLATFORM_WINDOWS
+#if AL2O3_PLATFORM != AL2O3_PLATFORM_WINDOWS
 TO_STRING_GEN(size_t, "%zu")
 #endif
 
