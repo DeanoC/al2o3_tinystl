@@ -27,17 +27,21 @@
 #ifndef TINYSTL_ALLOCATOR_H
 #define TINYSTL_ALLOCATOR_H
 
+#include "al2o3_platform/platform.h"
+#include "al2o3_memory/memory.h"
 #include "al2o3_tinystl/stddef.hpp"
 
 namespace tinystl {
 
 	struct allocator {
 		static void* static_allocate(size_t bytes) {
-			return operator new(bytes);
+			return MEMORY_MALLOC(bytes);
+//			return operator new(bytes);
 		}
 
 		static void static_deallocate(void* ptr, size_t /*bytes*/) {
-			operator delete(ptr);
+			MEMORY_FREE(ptr);
+//			operator delete(ptr);
 		}
 	};
 }

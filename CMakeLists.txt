@@ -28,7 +28,9 @@ set(Interface
 set(Src
 		dummy.cpp
 		)
-set(Deps)
+set(Deps
+		al2o3_platform
+		al2o3_memory)
 
 ADD_LIB(${LibName} "${Interface}" "${Src}" "${Deps}")
 
