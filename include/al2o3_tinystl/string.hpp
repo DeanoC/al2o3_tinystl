@@ -79,8 +79,10 @@ class basic_string {
   void resize(size_type size);
 
   void clear();
+	void append(basic_string const& str) { append(str.data(), str.size()); };
   void append(const char *first, const char *last);
-  void append(const char c) { append(&c, (&c) + 1); };
+  void append(const char c) { append(&c, 1); };
+	void append(const char *first, size_t n) { append(first, first + n); };
   void assign(const char *s, size_t n);
   void push_back(char c) { append(c); }
 
