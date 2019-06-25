@@ -43,11 +43,14 @@ namespace tinystl {
 		return hash;
 	}
 
+
 	template<typename T>
-	inline size_t hash(const T& value) {
-		const size_t asint = (size_t)value;
-		return hash_string((const char*)&asint, sizeof(asint));
-	}
+	struct hash {
+		inline size_t operator()(const T &value) {
+			const size_t asint = (size_t) value;
+			return hash_string((const char *) &asint, sizeof(asint));
+		}
+	};
 }
 
 #endif

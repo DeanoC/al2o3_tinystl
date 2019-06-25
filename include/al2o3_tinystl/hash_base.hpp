@@ -208,6 +208,7 @@ namespace tinystl {
 
 	template<typename Node>
 	struct unordered_hash_iterator {
+		using hash_node = Node;
 		Node* operator->() const;
 		Node& operator*() const;
 		Node* node;
@@ -280,8 +281,8 @@ namespace tinystl {
 	}
 
 	template<typename Node, typename Key>
-	static inline Node unordered_hash_find(const Key& key, Node* buckets, size_t nbuckets) {
-		const size_t bucket = hash(key) & (nbuckets - 2);
+	static inline Node unordered_hash_find(const Key& key, Node* buckets, size_t nbuckets, size_t hash) {
+		const size_t bucket = hash & (nbuckets - 2);
 		for (Node it = buckets[bucket], end = buckets[bucket+1]; it != end; it = it->next)
 			if (it->first == key)
 				return it;

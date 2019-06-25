@@ -7,6 +7,7 @@
 #include "al2o3_tinystl/stddef.hpp"
 
 namespace tinystl {
+template<typename allocator> class basic_string;
 
 class string_view {
  public:
@@ -28,6 +29,9 @@ class string_view {
   constexpr string_view(const string_view&) = default;
   string_view& operator=(const string_view&) = default;
 
+	template<typename allocator>
+	inline string_view& operator=(const class basic_string<allocator> &other);
+
   constexpr const char *data() const;
   constexpr char operator[](size_type pos) const;
   constexpr size_type size() const;
@@ -45,6 +49,8 @@ class string_view {
   constexpr bool ends_with(value_type x) const noexcept;
   constexpr size_type find(value_type ch, size_type pos = 0) const noexcept;
   constexpr size_type rfind(value_type ch, size_type pos = 0) const noexcept;
+	constexpr bool operator==(string_view const& v) const noexcept;
+	constexpr bool operator!=(string_view const& v) const noexcept;
 
  private:
   string_view(decltype(nullptr)) = delete;
@@ -146,6 +152,7 @@ constexpr bool string_view::ends_with(value_type x) const noexcept {
   if(m_size == 0) return false;
   return m_str[m_size-1] == x;
 }
+
 constexpr string_view::size_type string_view::find(value_type ch, size_type pos) const noexcept {
   if(pos >= m_size) return npos;
 
@@ -160,6 +167,35 @@ constexpr string_view::size_type string_view::rfind(value_type ch, size_type pos
     if (m_str[i - 1] == ch) { return i - 1; }
   }
   return npos;
+}
+
+constexpr bool string_view::operator==(string_view const& v) const noexcept {
+	if(v.size() != size()) return false;
+
+	char const* src = m_str;
+	char const* dst = v.data();
+
+	while(src < m_str + m_size) {
+		if(*src != *dst) return false;
+		src++;
+		dst++;
+	}
+	return true;
+
+}
+constexpr bool string_view::operator!=(string_view const& v) const noexcept {
+	if(v.size() != size()) return true;
+
+	char const* src = m_str;
+	char const* dst = v.data();
+
+	while(src < m_str + m_size) {
+		if(*src != *dst) return true;
+		src++;
+		dst++;
+	}
+	return false;
+
 }
 
 }
