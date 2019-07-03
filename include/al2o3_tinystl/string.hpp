@@ -493,16 +493,16 @@ inline typename basic_string<allocator>::size_type basic_string<allocator>::find
 	}
 
 	if (caseSensitive) {
-		for (size_type i = startPos; i >= 0; --i) {
-			if (m_first[i] == c) {
-				return i;
+		for (size_type i = startPos+1; i >= 1; --i) {
+			if (m_first[i-1] == c) {
+				return i-1;
 			}
 		}
 	} else {
 		c = (char) tolower(c);
-		for (size_type i = startPos; i >= 0; --i) {
-			if (tolower(m_first[i]) == c) {
-				return i;
+		for (size_type i = startPos; i >= 1; --i) {
+			if (tolower(m_first[i-1]) == c) {
+				return i-1;
 			}
 		}
 	}
@@ -525,8 +525,8 @@ inline typename basic_string<allocator>::size_type basic_string<allocator>::find
 		first = (char) tolower(first);
 	}
 
-	for (size_type i = startPos; i >= 0; --i) {
-		char c = m_first[i];
+	for (size_type i = startPos+1; i >= 1; --i) {
+		char c = m_first[i-1];
 		if (!caseSensitive) {
 			c = (char) tolower(c);
 		}
@@ -534,7 +534,7 @@ inline typename basic_string<allocator>::size_type basic_string<allocator>::find
 		if (c == first) {
 			bool found = true;
 			for (size_type j = 1; j < str.size(); ++j) {
-				c = m_first[i + j];
+				c = m_first[i + j + 1];
 				char d = str.m_first[j];
 				if (!caseSensitive) {
 					c = (char) tolower(c);
@@ -547,7 +547,7 @@ inline typename basic_string<allocator>::size_type basic_string<allocator>::find
 				}
 			}
 			if (found) {
-				return i;
+				return i - 1;
 			}
 		}
 	}
