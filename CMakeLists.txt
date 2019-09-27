@@ -33,9 +33,3 @@ set(Deps
 		al2o3_memory)
 
 ADD_LIB(${LibName} "${Interface}" "${Src}" "${Deps}")
-
-set( Tests
-		)
-set( TestDeps
-		)
-ADD_LIB_TESTS(${LibName} "${Interface}" "${Tests}" "${TestDeps}")
