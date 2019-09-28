@@ -35,7 +35,7 @@ jobs:
       run: |
         mkdir -p build
         cd build
-        cmake -unittests ..
+        cmake -Dunittests=ON ..
     - name: build
       run: |
         cd build
