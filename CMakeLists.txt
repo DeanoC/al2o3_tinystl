@@ -1,3 +1,4 @@
+cmake_minimum_required(VERSION 3.12.4)
 get_directory_property(hasParent PARENT_DIRECTORY)
 if(NOT hasParent)
 	include(FetchContent)
