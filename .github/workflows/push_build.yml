@@ -23,7 +23,7 @@ jobs:
         cmake --build . -j 8
   build_tests:
     needs: build
-    name: Build on ${{ matrix.os }}
+    name: Build unitests on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -35,7 +35,7 @@ jobs:
       run: |
         mkdir -p build
         cd build
-        cmake -unitstest ..
+        cmake -unittests ..
     - name: build
       run: |
         cd build
