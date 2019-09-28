@@ -995,9 +995,6 @@ TO_STRING_GEN(int64_t, "%"
 		PRIi64)
 TO_STRING_GEN(float, "%f")
 TO_STRING_GEN(double, "%f")
-#if AL2O3_PLATFORM != AL2O3_PLATFORM_WINDOWS
-TO_STRING_GEN(size_t, "%zu")
-#endif
 
 #undef TO_STRING_GEN
 
