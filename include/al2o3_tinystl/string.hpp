@@ -996,6 +996,10 @@ TO_STRING_GEN(int64_t, "%"
 TO_STRING_GEN(float, "%f")
 TO_STRING_GEN(double, "%f")
 
+#if AL2O3_PLATFORM_OS == AL2O3_PLATFORM_APPLE
+TO_STRING_GEN(size_t, "%zu")
+#endif
+
 #undef TO_STRING_GEN
 
 template<>
