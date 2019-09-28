@@ -21,3 +21,23 @@ jobs:
       run: |
         cd build
         cmake --build . -j 8
+  build_tests:
+    needs: build
+    name: Build on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-latest, macos-latest, ubuntu-latest]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: prepare
+      run: |
+        mkdir -p build
+        cd build
+        cmake -unitstest ..
+    - name: build
+      run: |
+        cd build
+        cmake --build . -j 8
+      
