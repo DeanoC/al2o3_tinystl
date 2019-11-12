@@ -28,12 +28,13 @@
 #ifndef TINYSTL_STRING_H
 #define TINYSTL_STRING_H
 
+#include "al2o3_platform/platform.h"
+#include "al2o3_platform/utf8.h"
 #include "al2o3_tinystl/allocator.hpp"
 #include "al2o3_tinystl/stddef.hpp"
 #include "al2o3_tinystl/hash.hpp"
 #include "al2o3_tinystl/string_view.hpp"
 #include <cctype>
-#include <cstring>
 #include <cstdarg>
 #include <cstdio>
 #include "inttypes.h"

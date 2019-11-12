@@ -1,5 +1,5 @@
 // MIT like see full license at end of file
-// Modified by Deano for Wyrd and Confetti for TheForge
+// Modified by Deano for Al2O3 and Confetti for TheForge
 #pragma once
 #ifndef TINYSTL_STRING_VIEW_H
 #define TINYSTL_STRING_VIEW_H
